@@ -1,0 +1,137 @@
+$themecolor: #000000;
+$white: #ffffff;
+$themered-color: #ED1C24;
+$golden: #FFAC0C;
+$yellow-golden: #FFE19C;
+$grey: #999999;
+$text-grey: #CCCCCC;
+$dark_grey: #1a1a1a;
+$cardcolor: #303030;
+
+
+
+// bounce effect
+
+.bounce {
+  button {
+    transition: 0.5s;
+  &:hover {
+    animation: bounce 3s infinite;
+  }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+
+    40% {
+      transform: translateY(-40px);
+    }
+
+    60% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+.border_animation_effect{
+  &::before , &::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+   
+    transition: all 0.99s;
+    opacity: 0;
+    border-radius: 16px;
+  }
+  &:before {
+    border-top: 2px solid $themered-color;
+    border-left: 2px solid $themered-color;
+    top: -2px;
+    left: -2px;
+  }
+  
+  &:hover::before,
+  &:hover::after {
+    width: 100.5%;
+    height: 100.5%;
+    opacity: 1;
+  }
+  
+  &:after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid $themered-color;
+    border-right: 2px solid $themered-color;
+  }
+}
+
+
+
+.flip-box {
+  perspective: 1000px;
+  transition: transform 0.8s ease;
+
+.flip-box-inner {
+  position: relative;
+    width: 195px;
+    height: 40px;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  animation: flip 7s infinite linear;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+&:hover{
+  transform: scale(1.05);
+
+  .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+}
+.flip-box-back {
+  transform: rotateY(180deg);
+}
+}
+
+
+.blink_text {
+  animation-name: blinker;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 10s;
+ padding: 0 3px;
+ 
+ @keyframes blinker {  
+  0% { opacity: 1.0; background-color: #fdc3c581;}
+  50% { opacity: 0.8; background-color: #303030; }
+  100% { opacity: 1.0; background-color: #595959;}
+ }
+}
+
+
+
+

@@ -1,0 +1,148 @@
+@import "variable";
+@import "mixins";
+
+.testimonial-container {
+   .testimonial-box {
+    @include cardsbg;
+    min-width: 33.33%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 0 !important;
+
+    p {
+      line-height: 25px;
+      padding: 20px 20px 30px;
+    }
+
+    span {
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+    &:hover {
+      transform: rotateX(0deg) scale3d(0.95, 0.95, 0.95);
+    }
+
+    .testmonial_detail {
+      width: calc(100% - 152px);
+      padding: 0 20px 20px;
+
+      strong {
+        img {
+          width: 14px;
+        }
+      }
+    }
+
+    .testmonial_img {
+      width: 144px;
+      height: 186px;
+
+      img {
+        width: 144px;
+        height: 186px;
+        object-fit: cover;
+        border: 2px solid $cardcolor;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 16px 0 16px 0;
+        -webkit-border-radius: 16px 0 16px 0;
+        -moz-border-radius: 16px 0 16px 0;
+        -ms-border-radius: 16px 0 16px 0;
+        -o-border-radius: 16px 0 16px 0;
+      }
+    }
+
+  }
+  .owl-theme {
+    .owl-nav{
+      button{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #ffffffc6;
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        top: 50%;
+        opacity: 1;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        z-index: 1;
+        &::after{
+          content: ' ';
+          background-image: url(../times_images/icon/prev_crsl.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 2;
+          z-index: 2;
+          border-radius: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+      
+  .owl-prev {
+    left: -54px;
+    &::after{
+      background-image: url(../times_images/icon/prev_crsl.svg);
+    }
+    @media screen and (max-width : 1245px) {
+      left: -30px;
+    }
+    @media screen and (max-width : 1032px) {
+      left: -24px;
+    }
+    @media screen and (max-width : 768px) {
+      left: -14px;
+    }
+  }
+
+  .owl-next {
+    right: -54px;
+    &::after{
+      background-image: url(../times_images/icon/next_crsl.svg);
+    }
+    @media screen and (max-width : 1245px) {
+      right: -30px;
+    }
+    @media screen and (max-width : 1032px) {
+      right:  -24px;
+    }
+    @media screen and (max-width : 768px) {
+      right:  -14px;
+    }
+  }
+
+  .owl-prev:hover,  .owl-next:hover {
+    border: 2px solid #ffffffc6;
+    box-shadow:  0 0 23px 0 #ffffffc5;
+    background-color: #ffffffc2;
+  }
+  }
+}
+}
+.ratings {
+  margin-bottom: 20px;
+  .rating-box {
+    min-width: 140px;
+    height: 110px;
+    &:last-child, &:nth-child(4){
+      min-width: 192px;
+    }
+    &:hover{
+      box-shadow: 0 0 4px 0 #ffffff;
+    }
+  }
+  @media screen and (max-width: 768px) {
+      @include mob_scroll;
+  }
+}
